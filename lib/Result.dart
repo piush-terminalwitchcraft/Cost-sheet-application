@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -5,6 +6,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:screenshot/screenshot.dart';
+
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class Result extends StatefulWidget {
   const Result({Key? key}) : super(key: key);
@@ -94,260 +101,280 @@ class _ResultState extends State<Result> {
     
   }
 
+  ScreenshotController screenshotController = ScreenshotController();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        margin: EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Text(
-                "Select State",
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 16,
+
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          margin: EdgeInsets.all(10),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text(
+                  "Select State",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 16,
+                  ),
+                
                 ),
-              
-              ),
-              SwitchListTile(
-                value: chk[0],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(0);
-                    })
-                },  
-                title: Text('Delhi',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[1],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(1);
-                    })
-                },  
-                title: Text('Haryana',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[2],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(2);
-                    })
-                },  
-                title: Text('Himachal Pradesh',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[3],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(3);
-                    })
-                },  
-                title: Text('Jammu and Kashmir',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[4],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(4);
-                    })
-                },  
-                title: Text('Punjab',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[5],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(5);
-                    })
-                },  
-                title: Text('Rajasthan',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[6],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(6);
-                    })
-                },  
-                title: Text('Uttarakhand',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[7],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(7);
-                    })
-                },  
-                title: Text('Uttar Pradesh',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[8],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(8);
-                    })
-                },  
-                title: Text('Gujrat',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[9],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(9);
-                    })
-                },  
-                title: Text('Chhattisgarh',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-              SwitchListTile(
-                value: chk[10],
-                onChanged: (newValue) =>{
-                    setState((){
-                      setArr(10);
-                    })
-                },  
-                title: Text('Maharashtra',),
-                tileColor: Color(0xFFF5F5F5),
-                dense: false,
-                controlAffinity: ListTileControlAffinity.trailing,
-              ),
-
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                child: Text("Rates on ${DateFormat('dd/MM/yyyy').format(DateTime.now())} For ${place[getidx()]}",
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 16,
-                ),),
-              ),
-
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("Soya Oil"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - ${(Soya15ltr).toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-           
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("Palm Oil"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - ${Palm15ltr.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("Mustard Oil"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - ${EMustard15ltr.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-
-               Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("Kacchhi Ghani Mustard Oil"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - ${KGMustard15ltr.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                child: Text("15 ltr tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
-                alignment: Alignment.centerLeft,
-              ),
-
-              ElevatedButton(
-                child: Text("Take ScreenShot",style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 16,
+                SwitchListTile(
+                  value: chk[0],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(0);
+                      })
+                  },  
+                  title: Text('Delhi',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
                 ),
+                SwitchListTile(
+                  value: chk[1],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(1);
+                      })
+                  },  
+                  title: Text('Haryana',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
                 ),
-                onPressed: ((){
-
-                }),
-              )
-
-            ],
+                SwitchListTile(
+                  value: chk[2],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(2);
+                      })
+                  },  
+                  title: Text('Himachal Pradesh',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[3],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(3);
+                      })
+                  },  
+                  title: Text('Jammu and Kashmir',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[4],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(4);
+                      })
+                  },  
+                  title: Text('Punjab',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[5],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(5);
+                      })
+                  },  
+                  title: Text('Rajasthan',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[6],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(6);
+                      })
+                  },  
+                  title: Text('Uttarakhand',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[7],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(7);
+                      })
+                  },  
+                  title: Text('Uttar Pradesh',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[8],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(8);
+                      })
+                  },  
+                  title: Text('Gujrat',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[9],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(9);
+                      })
+                  },  
+                  title: Text('Chhattisgarh',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                SwitchListTile(
+                  value: chk[10],
+                  onChanged: (newValue) =>{
+                      setState((){
+                        setArr(10);
+                      })
+                  },  
+                  title: Text('Maharashtra',),
+                  tileColor: Color(0xFFF5F5F5),
+                  dense: false,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+    
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Text("Rates on ${DateFormat('dd/MM/yyyy').format(DateTime.now())} For ${place[getidx()]}",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 16,
+                  ),),
+                ),
+                
+                Screenshot(
+                  controller: screenshotController,
+                  child: Container(
+                    color: Colors.white,
+                    child: Column(
+                      children : [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("Soya Oil"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 kg plain - ${(Soya15ltr).toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 ltr tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                               
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("Palm Oil"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 kg plain - ${Palm15ltr.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 ltr tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                      
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("Mustard Oil"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 kg plain - ${EMustard15ltr.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 ltr tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                      
+                     Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("Kacchhi Ghani Mustard Oil"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("15 kg plain - ${KGMustard15ltr.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: Text("1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: Text("15 ltr tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
+                      alignment: Alignment.centerLeft,
+                    ),
+                      ]),
+                  ),
+                ),
+    
+                ElevatedButton(
+                  child: Text("Take ScreenShot",style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 16,
+                  ),
+                  ),
+                  onPressed: ((){
+                    screenshotController
+                      .capture(delay: Duration(milliseconds: 10))
+                      .then((capturedImage) async {
+                    ShowCapturedWidget(context, capturedImage!);
+                  }).catchError((onError) {
+                    print(onError);
+                  });
+                  }),
+                )
+    
+              ],
+            ),
           ),
         ),
       ),
@@ -368,5 +395,32 @@ class _ResultState extends State<Result> {
     return -1;
   }
   
+Future<dynamic> ShowCapturedWidget(
+      BuildContext context, Uint8List capturedImage) {
+    return showDialog(
+      useSafeArea: false,
+      context: context,
+      builder: (context) => Scaffold(
+        appBar: AppBar(
+          title: Text("screenshot"),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.share),
+              onPressed: () async {
+                final tempDir = await getTemporaryDirectory();
+                final path = '${tempDir.path}/image.jpg';
+                File(path).writeAsBytesSync(capturedImage);
+                Share.shareFiles([path], text: "Screenshot");
+              },
+            )
+          ],
+        ),
+        body: Center(
+            child: capturedImage != null
+                ? Image.memory(capturedImage)
+                : Container()),
+      ),
+    );
+  }
 
 }
