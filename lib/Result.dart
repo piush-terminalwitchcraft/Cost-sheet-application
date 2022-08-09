@@ -5,7 +5,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:pluto_grid/pluto_grid.dart';
 
 class Result extends StatefulWidget {
   const Result({Key? key}) : super(key: key);
@@ -22,6 +21,8 @@ class _ResultState extends State<Result> {
   double Palm15ltr_ = 0, KGMustard15ltr_ = 0, Soya15ltr_ = 0, EMustard15ltr_ = 0;
   double Palm15ltrTin = 0, KGMustard15ltrTin = 0, Soya15ltrTin = 0, EMustard15ltrTin = 0;
   double Palm1ltrPouch = 0, KGMustard1ltrPouch = 0, Soya1ltrPouch = 0, EMustard1ltrPouch = 0;
+  List<String> place = 
+  ['Delhi','Haryana','Himachal Pradesh','Jammu And Kashmir','Punjab','Rajasthan','Uttarakhand','Uttar Pradesh','Gujrat','Chhattisgarh','Maharashtra'];
 
   refreshRates() {
       Palm15ltr = Palm15ltr_+ 15*rates[getidx()] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
@@ -38,63 +39,60 @@ class _ResultState extends State<Result> {
   void initState() {
     super.initState();
     users.doc('VdD1KmsYSvjhVDyx0RYw').get().then((data){
-      rates[0] =  data['Delhi'];
-      rates[1] =  data['Haryana'];
-      rates[2] =  data['Himachal Pradesh'];
-      rates[3] =  data['Jammu And Kashmir'];
-      rates[4] =  data['Punjab'];
-      rates[5] =  data['Rajasthan'];
-      rates[6] =  data['Uttarakhand'];
-      rates[7] =  data['Uttar Pradesh'];
-      rates[8] =  data['Gujrat'];
-      rates[9] =  data['Chhattisgarh'];
-      rates[10] =  data['Maharashtra'];
-      Palm15ltr_ = data['Palm15ltr'] ;
-      KGMustard15ltr_ = data['KGMustard15ltr'] ;
-      Soya15ltr_ = data['Soya15ltr'] ;
-      EMustard15ltr_ = data['EMustard15ltr'] ;
+      setState(() {
+        rates[0] =  data['Delhi'];
+        rates[1] =  data['Haryana'];
+        rates[2] =  data['Himachal Pradesh'];
+        rates[3] =  data['Jammu And Kashmir'];
+        rates[4] =  data['Punjab'];
+        rates[5] =  data['Rajasthan'];
+        rates[6] =  data['Uttarakhand'];
+        rates[7] =  data['Uttar Pradesh'];
+        rates[8] =  data['Gujrat'];
+        rates[9] =  data['Chhattisgarh'];
+        rates[10] =  data['Maharashtra'];
+        Palm15ltr_ = data['Palm15ltr'] ;
+        KGMustard15ltr_ = data['KGMustard15ltr'] ;
+        Soya15ltr_ = data['Soya15ltr'] ;
+        EMustard15ltr_ = data['EMustard15ltr'] ;
 
-      Palm15ltr = Palm15ltr_+ 15*rates[getidx()] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
-      KGMustard15ltr = KGMustard15ltr_ + 15*rates[getidx()] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
-      Soya15ltr = Soya15ltr_ + 15*rates[getidx()] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
-      EMustard15ltr = EMustard15ltr_ + 15*rates[getidx()] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        Palm15ltr = Palm15ltr_+ 15*rates[getidx()] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        KGMustard15ltr = KGMustard15ltr_ + 15*rates[getidx()] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        Soya15ltr = Soya15ltr_ + 15*rates[getidx()] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        EMustard15ltr = EMustard15ltr_ + 15*rates[getidx()] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
 
-      Palm15ltrTin = data['Palm15ltrTin'];
-      KGMustard15ltrTin = data['KGMustard15ltrTin'];
-      Soya15ltrTin = data['Soya15ltrTin'];
-      EMustard15ltrTin = data['EMustard15ltrTin'];
+        Palm15ltrTin = data['Palm15ltrTin'] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2 ;
+        KGMustard15ltrTin = data['KGMustard15ltrTin'] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        Soya15ltrTin = data['Soya15ltrTin'] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        EMustard15ltrTin = data['EMustard15ltrTin'] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
 
-      Palm1ltrPouch = data['Palm1ltrPouch'] + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
-      KGMustard1ltrPouch = data['KGMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
-      Soya1ltrPouch = data['Soya1ltrPouch'] + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
-      EMustard1ltrPouch = data['EMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
+        Palm1ltrPouch = data['Palm1ltrPouch'] + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        KGMustard1ltrPouch = data['KGMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
+        Soya1ltrPouch = data['Soya1ltrPouch'] + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        EMustard1ltrPouch = data['EMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
 
-      Palm15ltr += Palm15ltr*1.5/100;
-      KGMustard15ltr += KGMustard15ltr*1.5/100;
-      Soya15ltr += Soya15ltr*1.5/100;
-      EMustard15ltr += EMustard15ltr*1.5/100;
+        Palm15ltr += Palm15ltr*1.5/100;
+        KGMustard15ltr += KGMustard15ltr*1.5/100;
+        Soya15ltr += Soya15ltr*1.5/100;
+        EMustard15ltr += EMustard15ltr*1.5/100;
+        print(Soya15ltr);
 
-      Palm15ltrTin += Palm15ltrTin*1.5/100;
-      KGMustard15ltrTin += KGMustard15ltrTin*1.5/100;
-      Soya15ltrTin += Soya15ltrTin*1.5/100;
-      EMustard15ltrTin += EMustard15ltrTin*1.5/100;
+        Palm15ltrTin += Palm15ltrTin*1.5/100;
+        KGMustard15ltrTin += KGMustard15ltrTin*1.5/100;
+        Soya15ltrTin += Soya15ltrTin*1.5/100;
+        EMustard15ltrTin += EMustard15ltrTin*1.5/100;
 
-      Palm1ltrPouch += Palm1ltrPouch*1.5/100;
-      KGMustard1ltrPouch += KGMustard1ltrPouch*1.5/100;
-      Soya1ltrPouch += Soya1ltrPouch*1.5/100;
-      EMustard1ltrPouch += EMustard1ltrPouch*1.5/100;
-      print(Soya15ltr);
-      print(Soya15ltrTin);
-      print(Soya1ltrPouch);
+        Palm1ltrPouch += Palm1ltrPouch*1.5/100;
+        KGMustard1ltrPouch += KGMustard1ltrPouch*1.5/100;
+        Soya1ltrPouch += Soya1ltrPouch*1.5/100;
+        EMustard1ltrPouch += EMustard1ltrPouch*1.5/100;
+      });
 
     }).catchError((err){
       print(err);
-    })
-    
-    ;
+    });
     
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +102,14 @@ class _ResultState extends State<Result> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Text("Select State"),
+              Text(
+                "Select State",
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 16,
+                ),
+              
+              ),
               SwitchListTile(
                 value: chk[0],
                 onChanged: (newValue) =>{
@@ -240,7 +245,11 @@ class _ResultState extends State<Result> {
 
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10),
-                child: Text("Rates on ${DateFormat('dd/MM/yyyy').format(DateTime.now())} For Delhi"),
+                child: Text("Rates on ${DateFormat('dd/MM/yyyy').format(DateTime.now())} For ${place[getidx()]}",
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 16,
+                ),),
               ),
 
               Container(
@@ -250,17 +259,17 @@ class _ResultState extends State<Result> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - $Soya15ltr"),
+                child: Text("15 kg plain - ${(Soya15ltr).toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - $Soya1ltrPouch"),
+                child: Text("1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - $Soya15ltrTin"),
+                child: Text("15 ltr tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
            
@@ -271,17 +280,17 @@ class _ResultState extends State<Result> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - $Palm15ltr"),
+                child: Text("15 kg plain - ${Palm15ltr.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - $Palm1ltrPouch"),
+                child: Text("1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - $Palm15ltrTin"),
+                child: Text("15 ltr tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
 
@@ -292,17 +301,17 @@ class _ResultState extends State<Result> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - $EMustard15ltr"),
+                child: Text("15 kg plain - ${EMustard15ltr.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - $EMustard1ltrPouch"),
+                child: Text("1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - $EMustard15ltrTin"),
+                child: Text("15 ltr tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
 
@@ -313,23 +322,29 @@ class _ResultState extends State<Result> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 kg plain - $KGMustard15ltr"),
+                child: Text("15 kg plain - ${KGMustard15ltr.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("1 ltr pouch - $KGMustard1ltrPouch"),
+                child: Text("1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                child: Text("15 ltr tin - $KGMustard15ltrTin"),
+                margin: EdgeInsets.symmetric(vertical: 10),
+                child: Text("15 ltr tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
                 alignment: Alignment.centerLeft,
               ),
 
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                child: Text("Take ScreenShot"),
+              ElevatedButton(
+                child: Text("Take ScreenShot",style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 16,
+                ),
+                ),
+                onPressed: ((){
+
+                }),
               )
 
             ],
