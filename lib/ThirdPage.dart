@@ -1,0 +1,121 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class ThirdScreenWidget extends StatefulWidget {
+  const ThirdScreenWidget({Key? key}) : super(key: key);
+
+  @override
+  _ThirdScreenWidgetState createState() => _ThirdScreenWidgetState();
+}
+
+class _ThirdScreenWidgetState extends State<ThirdScreenWidget> {
+  TextEditingController? textController;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  CollectionReference users = FirebaseFirestore.instance.collection('CostSheet');
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+    users.doc('VdD1KmsYSvjhVDyx0RYw').get().then((data) => {
+      textController?.text = data['DiscSoya'].toString(),
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Stack(
+            children: [
+              Align(
+                alignment: AlignmentDirectional(-0.86, -0.77),
+                child: Text(
+                  'Discount for today is ',
+                  style: TextStyle(
+                        fontFamily: 'Roboto',
+                      ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(-0.32, -0.89),
+                child: Text(
+                  'Please Add the Discounts as applicable',
+                  style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                      ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.7, -0.8),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(240, 0, 20, 0),
+                  child: TextFormField(
+                    controller: textController,
+                    autofocus: true,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      // hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(4.0),
+                          topRight: Radius.circular(4.0),
+                        ),
+                      ),
+                      filled: true,
+                      fillColor: Color(0xFFFFD9B3),
+                    ),
+                    // style: FlutterFlowTheme.of(context).bodyText1,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.74, 0.83),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(220, 0, 20, 0),
+                  child: ElevatedButton(
+                    child: Text("Submit"),
+                    onPressed: ()async{
+                      await users.doc('VdD1KmsYSvjhVDyx0RYw').update({
+                        'DiscSoya': double.parse((textController == null ? '0': textController!.text)),
+                        'DiscPalm': double.parse((textController == null ? '0': textController!.text)),
+                        'DiscKGMustard': double.parse((textController == null ? '0': textController!.text)),
+                        'DiscEMustard': double.parse((textController == null ? '0': textController!.text)),
+                      }).then((value) => {
+                        print("Data updated")
+                      }).catchError((error)=>{
+                        print(error),
+                      });
+                      Navigator.pushNamed(context, '/respage');
+                    },
+
+                  )
+                  ),
+                ),
+              
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
