@@ -61,7 +61,7 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+   
             body: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -477,7 +477,7 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Gujrat',
+                          'Gujarat',
                           // style: FlutterFlowTheme.of(context).bodyText1,
                           style: TextStyle(
                           fontFamily: 'Roboto',
