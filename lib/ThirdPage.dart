@@ -26,6 +26,7 @@ class _ThirdScreenWidgetState extends State<ThirdScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       body: SafeArea(
         child: GestureDetector(
@@ -35,7 +36,7 @@ class _ThirdScreenWidgetState extends State<ThirdScreenWidget> {
               Align(
                 alignment: AlignmentDirectional(-0.86, -0.77),
                 child: Text(
-                  'Discount for today is ',
+                  'Discount for today is (%) : ',
                   style: TextStyle(
                         fontFamily: 'Roboto',
                       ),
@@ -59,30 +60,14 @@ class _ThirdScreenWidgetState extends State<ThirdScreenWidget> {
                     controller: textController,
                     autofocus: true,
                     obscureText: false,
-                    decoration: InputDecoration(
-                      // hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(4.0),
-                          topRight: Radius.circular(4.0),
-                        ),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(4.0),
-                          topRight: Radius.circular(4.0),
-                        ),
-                      ),
+                    decoration: const InputDecoration(
                       filled: true,
                       fillColor: Color(0xFFFFD9B3),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                      ),
                     ),
                     // style: FlutterFlowTheme.of(context).bodyText1,
                   ),
@@ -92,8 +77,13 @@ class _ThirdScreenWidgetState extends State<ThirdScreenWidget> {
                 alignment: AlignmentDirectional(0.74, 0.83),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(220, 0, 20, 0),
-                  child: ElevatedButton(
-                    child: Text("Submit"),
+                  child: ElevatedButton.icon(
+                    label: Text("Submit"),
+                    style : ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
                     onPressed: ()async{
                       await users.doc('VdD1KmsYSvjhVDyx0RYw').update({
                         'DiscSoya': double.parse((textController == null ? '0': textController!.text)),
@@ -107,7 +97,7 @@ class _ThirdScreenWidgetState extends State<ThirdScreenWidget> {
                       });
                       Navigator.pushNamed(context, '/respage');
                     },
-
+                  icon: Icon(Icons.send),
                   )
                   ),
                 ),
