@@ -372,25 +372,25 @@ class _ResultState extends State<Result> {
                           child: Text("Soya Oil", style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 kg plain - ${(Soya15ltr).toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 ltr tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         SizedBox(
                           height: 10,
@@ -400,25 +400,25 @@ class _ResultState extends State<Result> {
                           child: Text("Palm Oil", style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 kg plain - ${Palm15ltr.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 ltr tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         SizedBox(
                           height: 10,
@@ -428,25 +428,25 @@ class _ResultState extends State<Result> {
                           child: Text("Mustard Oil", style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 kg plain - ${EMustard15ltr.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 ltr tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         SizedBox(
                           height: 10,
@@ -456,25 +456,25 @@ class _ResultState extends State<Result> {
                           child: Text("Kacchhi Ghani Mustard Oil", style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "15 kg plain - ${KGMustard15ltr.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
                               "1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10),
                           child: Text(
                               "15 ltr tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                         ),
                       ]),
                     ),

@@ -89,144 +89,165 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 40, 100, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        '1- SOYA OIL',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                        ),
-                      ),
-                      SizedBox(height: 40),
-                      Text(
-                        '2- PALM OIL',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                        ),
-                      ),
-                      SizedBox(height: 40),
-                      Text(
-                        '''
-3- MUSTARD OIL
-   EXPELLER
-              ''',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                        ),
-                      ),
-                      SizedBox(height: 1),
-                      Text(
-                        '''
-4- KACCHI GHAANI 
-   MUSTARD
-             ''',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Column(
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      height: 50,
-                      child: TextFormField(
-                        controller: textController3,
-                        textAlign: TextAlign.center,
-                        textAlignVertical: TextAlignVertical.center,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Color(0xFFFFD9B3),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                        // style: FlutterFlowTheme.of(context).bodyText1,
-                      ),
-                    ),
-
-                    SizedBox(height: 15),
-                    SizedBox(
-                      width: 100,
-                      height: 50,
-                      child: TextFormField(
-                        controller: textController1,
-                        textAlign: TextAlign.center,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Color(0xFFFFD9B3),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                        // style: FlutterFlowTheme.of(context).bodyText1,
-                      ),
-                    ),
-
-                     SizedBox(height: 15),
-
-                    SizedBox(
-                      width: 100,
-                      height: 50,
-                      child: TextFormField(
-                        controller: textController4,
-                        textAlign: TextAlign.center,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Color(0xFFFFD9B3),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                        // style: FlutterFlowTheme.of(context).bodyText1,
-                      ),
-                    ),
-
-                     SizedBox(height: 15),
-
-                    SizedBox(
-                      width: 100,
-                      height: 50,
-                      child: TextFormField(
-                        controller: textController2,
-                        textAlign: TextAlign.center,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Color(0xFFFFD9B3),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                        // style: FlutterFlowTheme.of(context).bodyText1,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+             
+            SizedBox(
+              height: 20,
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '1- SOYA OIL',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                  SizedBox(
+                        width: 130,
+                        height: 60,
+                        child: TextFormField(
+                          controller: textController3,
+                          textAlign: TextAlign.center,
+                          textAlignVertical: TextAlignVertical.center,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xFFFFD9B3),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                          ),
+                          // style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                ],
+              ),
+            ),
+        SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '2- PALM OIL',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                  SizedBox(
+                        width: 130,
+                        height: 60,
+                        child: TextFormField(
+                          controller: textController1,
+                          textAlign: TextAlign.center,
+                          textAlignVertical: TextAlignVertical.center,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xFFFFD9B3),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                          ),
+                          // style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                ],
+              ),
+            ),
+        SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '3- MUSTARD OIL \n    EXPELLER',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                  SizedBox(
+                        width: 130,
+                        height: 60,
+                        child: TextFormField(
+                          controller: textController4,
+                          textAlign: TextAlign.center,
+                          textAlignVertical: TextAlignVertical.center,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xFFFFD9B3),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                          ),
+                          // style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                ],
+              ),
+            ),
+        
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '4- KACCHI GHAANI \n     MUSTARD',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                  SizedBox(
+                        width: 130,
+                        height: 60,
+                        child: TextFormField(
+                          controller: textController2,
+                          textAlign: TextAlign.center,
+                          textAlignVertical: TextAlignVertical.center,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xFFFFD9B3),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                          ),
+                          // style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                ],
+              ),
+            ),
+        
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(250, 50, 20, 0),
               child: ElevatedButton.icon(
@@ -268,7 +289,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       .catchError((error) => {
                             print(error),
                           });
-
+        
                   Navigator.of(context).pushNamed('/firstpage');
                 },
                 label: Container(

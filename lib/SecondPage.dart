@@ -61,7 +61,6 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
 
     return SafeArea(
       child: Scaffold(
-   
             body: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
