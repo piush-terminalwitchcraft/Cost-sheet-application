@@ -356,6 +356,8 @@ class _ResultState extends State<Result> {
                       padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
                       child: Column(
                         children: [
+                        SizedBox(height:10),
+                        SizedBox(height:10),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10),
                           child: Text(
@@ -366,6 +368,11 @@ class _ResultState extends State<Result> {
                               decoration: TextDecoration.underline,
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          width: 64,
+                          height: 64,
+                          child: Image(image: Image.asset("assets/logo.jpeg").image),
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),

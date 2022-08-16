@@ -266,24 +266,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       .update({
                         'Palm15ltr': double.parse((textController1 == null
                                 ? '0'
-                                : textController1!.text)) *
-                            15 /
-                            10,
+                                : textController1!.text)) * 0.9 *15 /10,
                         'KGMustard15ltr': double.parse((textController2 == null
                                 ? '0'
-                                : textController2!.text)) *
-                            15 /
-                            10,
+                                : textController2!.text)) * 0.91 *15 /10,
                         'Soya15ltr': double.parse((textController3 == null
                                 ? '0'
-                                : textController3!.text)) *
-                            15 /
-                            10,
+                                : textController3!.text)) * 0.91 *15 /10,
                         'EMustard15ltr': double.parse((textController4 == null
                                 ? '0'
-                                : textController4!.text)) *
-                            15 /
-                            10,
+                                : textController4!.text)) * 0.91 *15 /10,
                       })
                       .then((value) => {print("Data updated")})
                       .catchError((error) => {
