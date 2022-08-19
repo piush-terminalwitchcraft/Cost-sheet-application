@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-class SecondScreenWidget extends StatefulWidget {
+class SecondScreenWidget2 extends StatefulWidget {
   // const MyRecord(this.recordName);
-  const SecondScreenWidget({Key? key}) : super(key: key);
+  const SecondScreenWidget2({Key? key}) : super(key: key);
 
   @override
-  _SecondScreenWidgetState createState() => _SecondScreenWidgetState();
+  _SecondScreenWidgetState2 createState() => _SecondScreenWidgetState2();
 }
 
-class _SecondScreenWidgetState extends State<SecondScreenWidget> {
+class _SecondScreenWidgetState2 extends State<SecondScreenWidget2> {
 
   TextEditingController? textController1;
   TextEditingController? textController2;
@@ -53,23 +53,23 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
     textController16 = TextEditingController();
     textController17 = TextEditingController();
     users.doc('VdD1KmsYSvjhVDyx0RYw').get().then((data) => {
-      textController1?.text = data['StateUPWestMathura'].toString(),
-      textController2?.text = data['StateUPEastMathura'].toString(),
-      textController3?.text = data['StateUttarakhandMathura'].toString(),
-      textController4?.text = data['StateHaryanaMathura'].toString(),
-      textController5?.text = data['StatePunjabMathura'].toString(),
-      textController6?.text = data['StateHimachalPradeshMathura'].toString(),
-      textController7?.text = data['StateJammuKashmirMathura'].toString(),
-      textController8?.text = data['StateRajasthanMathura'].toString(),
-      textController9?.text = data['StateGujratMathura'].toString(),
-      textController10?.text = data['StateMadhyaPradeshMathura'].toString(),
-      textController11?.text = data['StateChattisgarhMathura'].toString(),
-      textController12?.text = data['StateOdishaMathura'].toString(),
-      textController13?.text = data['StateJharkhandMathura'].toString(),
-      textController14?.text = data['StateBiharMathura'].toString(),
-      textController15?.text = data['StateWestBengalMathura'].toString(),
-      textController16?.text = data['StateAssamMathura'].toString(),
-      textController17?.text = data['StateNewDelhiMathura'].toString(),
+      textController1?.text = data['StateUPWestGandhidharm'].toString(),
+      textController2?.text = data['StateUPEastGandhidharm'].toString(),
+      textController3?.text = data['StateUttarakhandGandhidharm'].toString(),
+      textController4?.text = data['StateHaryanaGandhidharm'].toString(),
+      textController5?.text = data['StatePunjabGandhidharm'].toString(),
+      textController6?.text = data['StateHimachalPradeshGandhidharm'].toString(),
+      textController7?.text = data['StateJammuKashmirGandhidharm'].toString(),
+      textController8?.text = data['StateRajasthanGandhidharm'].toString(),
+      textController9?.text = data['StateGujratGandhidharm'].toString(),
+      textController10?.text = data['StateMadhyaPradeshGandhidharm'].toString(),
+      textController11?.text = data['StateChattisgarhGandhidharm'].toString(),
+      textController12?.text = data['StateOdishaGandhidharm'].toString(),
+      textController13?.text = data['StateJharkhandGandhidharm'].toString(),
+      textController14?.text = data['StateBiharGandhidharm'].toString(),
+      textController15?.text = data['StateWestBengalGandhidharm'].toString(),
+      textController16?.text = data['StateAssamGandhidharm'].toString(),
+      textController17?.text = data['StateNewDelhiGandhidharm'].toString(),
     });
   }
 
@@ -89,7 +89,7 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
                       alignment: Alignment.center,
                       margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: Text(
-                        'Please confirm the freight charges for mathura ${DateFormat('dd/MM/yyyy').format(DateTime.now())} of',
+                        'Please confirm the freight charges for Gandhidharm ${DateFormat('dd/MM/yyyy').format(DateTime.now())} of',
                         style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 16,
@@ -642,7 +642,7 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Odisha',
+                          'Odisha ',
                           // style: FlutterFlowTheme.of(context).bodyText1,
                           style: TextStyle(
                           fontFamily: 'Roboto',
@@ -941,29 +941,29 @@ class _SecondScreenWidgetState extends State<SecondScreenWidget> {
                       ),
                       onPressed: () async{
                         await users.doc('VdD1KmsYSvjhVDyx0RYw').update({
-                          'StateUPWestMathura': double.parse((textController1 == null ? '0': textController1!.text)),
-                          'StateUPEastMathura': double.parse((textController2 == null ? '0': textController2!.text)),
-                          'StateUttarakhandMathura': double.parse((textController3 == null ? '0': textController3!.text)),
-                          'StateHaryanaMathura': double.parse((textController4 == null ? '0': textController4!.text)),
-                          'StatePunjabMathura': double.parse((textController5 == null ? '0': textController5!.text)),
-                          'StateHimachalPradeshMathura': double.parse((textController6 == null ? '0': textController6!.text)),
-                          'StateJammuKashmirMathura': double.parse((textController7 == null ? '0': textController7!.text)),
-                          'StateRajasthanMathura': double.parse((textController8 == null ? '0': textController8!.text)),
-                          'StateGujratMathura': double.parse((textController9 == null ? '0': textController9!.text)),
-                          'StateMadhyaPradeshMathura': double.parse((textController10 == null ? '0': textController10!.text)),
-                          'StateChattisgarhMathura': double.parse((textController11 == null ? '0': textController11!.text)),
-                          'StateOdishaMathura': double.parse((textController12 == null ? '0': textController12!.text)),
-                          'StateJharkhandMathura': double.parse((textController13 == null ? '0': textController13!.text)),
-                          'StateBiharMathura': double.parse((textController14 == null ? '0': textController14!.text)),
-                          'StateWestBengalMathura': double.parse((textController15 == null ? '0': textController15!.text)),
-                          'StateAssamMathura': double.parse((textController16 == null ? '0': textController16!.text)),
-                          'StateNewDelhiMathura': double.parse((textController17 == null ? '0': textController17!.text)),
+                          'StateUPWestGandhidharm': double.parse((textController1 == null ? '0': textController1!.text)),
+                          'StateUPEastGandhidharm': double.parse((textController2 == null ? '0': textController2!.text)),
+                          'StateUttarakhandGandhidharm': double.parse((textController3 == null ? '0': textController3!.text)),
+                          'StateHaryanaGandhidharm': double.parse((textController4 == null ? '0': textController4!.text)),
+                          'StatePunjabGandhidharm': double.parse((textController5 == null ? '0': textController5!.text)),
+                          'StateHimachalPradeshGandhidharm': double.parse((textController6 == null ? '0': textController6!.text)),
+                          'StateJammuKashmirGandhidharm': double.parse((textController7 == null ? '0': textController7!.text)),
+                          'StateRajasthanGandhidharm': double.parse((textController8 == null ? '0': textController8!.text)),
+                          'StateGujratGandhidharm': double.parse((textController9 == null ? '0': textController9!.text)),
+                          'StateMadhyaPradeshGandhidharm': double.parse((textController10 == null ? '0': textController10!.text)),
+                          'StateChattisgarhGandhidharm': double.parse((textController11 == null ? '0': textController11!.text)),
+                          'StateOdishaGandhidharm': double.parse((textController12 == null ? '0': textController12!.text)),
+                          'StateJharkhandGandhidharm': double.parse((textController13 == null ? '0': textController13!.text)),
+                          'StateBiharGandhidharm': double.parse((textController14 == null ? '0': textController14!.text)),
+                          'StateWestBengalGandhidharm': double.parse((textController15 == null ? '0': textController15!.text)),
+                          'StateAssamGandhidharm': double.parse((textController16 == null ? '0': textController16!.text)),
+                          'StateNewDelhiGandhidharm': double.parse((textController17 == null ? '0': textController17!.text)),
                         }).then((value) => {
                           print("Data updated")
                         }).catchError((error)=>{
                           print(error),
                         });
-                        Navigator.pushNamed(context, '/secondpage2');
+                        Navigator.pushNamed(context, '/secondpage');
                       }, 
                       label: Text("Submit"),
                       icon: Icon(Icons.send),

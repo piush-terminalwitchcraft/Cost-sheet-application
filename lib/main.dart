@@ -13,6 +13,8 @@ import 'package:cost_application/firebase_options.dart';
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
+import 'SecondPage2.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
           ),
         "/firstpage": ((context) => SecondScreenWidget()),
         "/secondpage": ((context) => ThirdScreenWidget()),
+        "/secondpage2":((context)=> SecondScreenWidget2()),
         "/respage": ((context) => Result()),
       },
     );
