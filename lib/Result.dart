@@ -96,21 +96,29 @@ class _ResultState extends State<Result> {
         rates[8] = data['Gujrat'];
         rates[9] = data['Chhattisgarh'];
         rates[10] = data['Maharashtra'];
-        Palm15ltr_ = data['Palm15ltr'];
-        KGMustard15ltr_ = data['KGMustard15ltr'];
-        Soya15ltr_ = data['Soya15ltr'];
-        EMustard15ltr_ = data['EMustard15ltr'];
 
-        Palm15ltr = Palm15ltr_ +
-            15 * rates[getidx()] +
-            116 +
-            1.65 +
-            0.7 +
-            4.72 +
-            1 +
-            8 +
-            2;
-        KGMustard15ltr = KGMustard15ltr_ +
+        
+        Palm15ltr_ = data['Palm15ltr'];  // palm input 
+        KGMustard15ltr_ = data['KGMustard15ltr']; // Kacchi ghani input
+        Soya15ltr_ = data['Soya15ltr'];  // soya input
+        EMustard15ltr_ = data['EMustard15ltr'];  // mustard input
+
+        // palm 15 ltr calculations
+        Palm15ltr = (Palm15ltr_)/10;
+        Palm15ltr = (Palm15ltr + 4) * 15;
+        Palm15ltr = Palm15ltr + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Palm15ltr = Palm15ltr + Palm15ltr * 1.5 / 100;
+        Palm15ltr = Palm15ltr + Palm15ltr * 5 / 100;
+
+        // palm 1 ltr pouch
+        Palm1ltrPouch = 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+
+        // palm 15 ltr tin
+        Palm15ltrTin = 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+
+
+
+KGMustard15ltr = KGMustard15ltr_ +
             15 * rates[getidx()] +
             111 +
             0.7 +
@@ -136,8 +144,17 @@ class _ResultState extends State<Result> {
             8 +
             2;
 
-        Palm15ltrTin =
-            data['Palm15ltrTin'] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+      // soya
+
+
+
+
+
+      // KGMustard
+
+
+
+      // Mustard
         KGMustard15ltrTin =
             data['KGMustard15ltrTin'] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
         Soya15ltrTin =
@@ -145,8 +162,7 @@ class _ResultState extends State<Result> {
         EMustard15ltrTin =
             data['EMustard15ltrTin'] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
 
-        Palm1ltrPouch =
-            data['Palm1ltrPouch'] + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        
         KGMustard1ltrPouch =
             data['KGMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
         Soya1ltrPouch =
@@ -154,18 +170,11 @@ class _ResultState extends State<Result> {
         EMustard1ltrPouch =
             data['EMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
 
-        Palm15ltr += Palm15ltr * 1.5 / 100;
-        KGMustard15ltr += KGMustard15ltr * 1.5 / 100;
-        Soya15ltr += Soya15ltr * 1.5 / 100;
-        EMustard15ltr += EMustard15ltr * 1.5 / 100;
-        print(Soya15ltr);
 
-        Palm15ltrTin += Palm15ltrTin * 1.5 / 100;
         KGMustard15ltrTin += KGMustard15ltrTin * 1.5 / 100;
         Soya15ltrTin += Soya15ltrTin * 1.5 / 100;
         EMustard15ltrTin += EMustard15ltrTin * 1.5 / 100;
 
-        Palm1ltrPouch += Palm1ltrPouch * 1.5 / 100;
         KGMustard1ltrPouch += KGMustard1ltrPouch * 1.5 / 100;
         Soya1ltrPouch += Soya1ltrPouch * 1.5 / 100;
         EMustard1ltrPouch += EMustard1ltrPouch * 1.5 / 100;
@@ -347,17 +356,15 @@ class _ResultState extends State<Result> {
                   dense: false,
                   controlAffinity: ListTileControlAffinity.trailing,
                 ),
-                
                 Screenshot(
                   controller: screenshotController,
                   child: Container(
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
-                      child: Column(
-                        children: [
-                        SizedBox(height:10),
-                        SizedBox(height:10),
+                      child: Column(children: [
+                        SizedBox(height: 10),
+                        SizedBox(height: 10),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10),
                           child: Text(
@@ -372,13 +379,17 @@ class _ResultState extends State<Result> {
                         SizedBox(
                           width: 64,
                           height: 64,
-                          child: Image(image: Image.asset("assets/logo.jpeg").image),
+                          child: Image(
+                              image: Image.asset("assets/logo.jpeg").image),
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text("Soya Oil", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),),
+                          child: Text(
+                            "Soya Oil",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           alignment: Alignment.centerLeft,
                         ),
                         Container(
@@ -404,9 +415,12 @@ class _ResultState extends State<Result> {
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text("Palm Oil", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),),
+                          child: Text(
+                            "Palm Oil",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           alignment: Alignment.centerLeft,
                         ),
                         Container(
@@ -432,9 +446,12 @@ class _ResultState extends State<Result> {
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text("Mustard Oil", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),),
+                          child: Text(
+                            "Mustard Oil",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           alignment: Alignment.centerLeft,
                         ),
                         Container(
@@ -460,9 +477,12 @@ class _ResultState extends State<Result> {
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text("Kacchhi Ghani Mustard Oil", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),),
+                          child: Text(
+                            "Kacchhi Ghani Mustard Oil",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           alignment: Alignment.centerLeft,
                         ),
                         Container(

@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": ((context) => AnimatedSplashScreen(
              nextScreen: HomePageWidget(),
-             splash : 'assets/oil.png',
+             splash : 'assets/logo.jpeg',
              splashIconSize : 300,
              duration: 500,
              )
@@ -269,23 +269,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       .update({
                         'Palm15ltr': double.parse((textController1 == null
                                 ? '0'
-                                : textController1!.text)) * 0.9 *15 /10,
+                                : textController1!.text)),
                         'KGMustard15ltr': double.parse((textController2 == null
                                 ? '0'
-                                : textController2!.text)) * 0.91 *15 /10,
+                                : textController2!.text)),
                         'Soya15ltr': double.parse((textController3 == null
                                 ? '0'
-                                : textController3!.text)) * 0.91 *15 /10,
+                                : textController3!.text)),
                         'EMustard15ltr': double.parse((textController4 == null
                                 ? '0'
-                                : textController4!.text)) * 0.91 *15 /10,
+                                : textController4!.text)),
                       })
                       .then((value) => {print("Data updated")})
                       .catchError((error) => {
                             print(error),
                           });
         
-                  Navigator.of(context).pushNamed('/firstpage');
+                  Navigator.of(context).pushNamed('/respage');
                 },
                 label: Container(
                     width: 130,
