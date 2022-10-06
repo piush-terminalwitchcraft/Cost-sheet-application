@@ -103,6 +103,7 @@ class _ResultState extends State<Result> {
         Soya15ltr_ = data['Soya15ltr'];  // soya input
         EMustard15ltr_ = data['EMustard15ltr'];  // mustard input
 
+        //Editted from here--------------------------------------------------------------------------------------
         // palm 15 ltr calculations
         Palm15ltr = (Palm15ltr_)/10;
         Palm15ltr = (Palm15ltr + 4) * 15;
@@ -111,73 +112,88 @@ class _ResultState extends State<Result> {
         Palm15ltr = Palm15ltr + Palm15ltr * 5 / 100;
 
         // palm 1 ltr pouch
-        Palm1ltrPouch = 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        Palm1ltrPouch =(Palm15ltr_)/10+4;
+        Palm1ltrPouch=Palm1ltrPouch*0.9;
+        Palm1ltrPouch= Palm1ltrPouch+1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        Palm1ltrPouch= Palm1ltrPouch+ Palm1ltrPouch*1.5/100;
+        Palm1ltrPouch= Palm1ltrPouch+ Palm1ltrPouch*5/100;
 
         // palm 15 ltr tin
-        Palm15ltrTin = 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Palm15ltrTin =  (Palm15ltr_)/10+4;
+        Palm15ltrTin= Palm15ltrTin*0.9*15;
+        Palm15ltrTin= Palm15ltrTin+116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Palm15ltrTin= Palm15ltrTin+ Palm15ltrTin*1.5/100;
+        Palm15ltrTin= Palm15ltrTin+ Palm15ltrTin*5/100;
 
+        //KGMustard
+        KGMustard15ltr = (KGMustard15ltr_) /10;
+        KGMustard15ltr  = (KGMustard15ltr + 2.5) * 15;
+        KGMustard15ltr  = KGMustard15ltr  + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        KGMustard15ltr  =KGMustard15ltr +KGMustard15ltr  * 1.5 / 100;
+        KGMustard15ltr  = KGMustard15ltr +KGMustard15ltr  * 5 / 100;
+        
+        
+        //KG Mustard 1 ltr pouch
+        KGMustard1ltrPouch=(KGMustard15ltr_)/10+2.5;        
+        KGMustard1ltrPouch=KGMustard1ltrPouch*0.91;
+        KGMustard1ltrPouch=KGMustard1ltrPouch+1.95+1.76+0.08+0.25+0.17;
+        KGMustard1ltrPouch=KGMustard1ltrPouch+KGMustard1ltrPouch*1.5/100;
+        KGMustard1ltrPouch=KGMustard1ltrPouch+KGMustard1ltrPouch*5/100;
+        
+        //KGMustard 15 ltr tin
+        KGMustard15ltrTin=(KGMustard15ltr_)/10+2.5;
+        KGMustard15ltrTin=KGMustard15ltrTin*0.91*15;
+        KGMustard15ltrTin=KGMustard15ltrTin+111+0.7+4.13+1+8+2;
+        KGMustard15ltrTin=KGMustard15ltrTin+KGMustard15ltrTin*1.5/100;
+        KGMustard15ltrTin=KGMustard15ltrTin+KGMustard15ltrTin*5/100;
 
-
-KGMustard15ltr = KGMustard15ltr_ +
-            15 * rates[getidx()] +
-            111 +
-            0.7 +
-            4.13 +
-            1 +
-            8 +
-            2;
-        Soya15ltr = Soya15ltr_ +
-            15 * rates[getidx()] +
-            116 +
-            1.65 +
-            0.7 +
-            4.72 +
-            1 +
-            8 +
-            2;
-        EMustard15ltr = EMustard15ltr_ +
-            15 * rates[getidx()] +
-            111 +
-            0.7 +
-            4.13 +
-            1 +
-            8 +
-            2;
+        //EMustard  
+        EMustard15ltr = (EMustard15ltr_) /10;
+        EMustard15ltr  = (EMustard15ltr + 2.5) * 15;
+        EMustard15ltr  = EMustard15ltr  + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        EMustard15ltr  =EMustard15ltr +EMustard15ltr  * 1.5 / 100;
+        EMustard15ltr  = EMustard15ltr +EMustard15ltr  * 5 / 100;
+        
+        //E Mustard 1 ltr pouch
+        EMustard1ltrPouch=(EMustard15ltr_)/10+2.5;        
+        EMustard1ltrPouch=EMustard1ltrPouch*0.91;
+        EMustard1ltrPouch=EMustard1ltrPouch+1.95+1.76+0.08+0.25+0.17;
+        EMustard1ltrPouch=EMustard1ltrPouch+EMustard1ltrPouch*1.5/100;
+        EMustard1ltrPouch=EMustard1ltrPouch+EMustard1ltrPouch*5/100;
+        
+        //EMustard 15 ltr tin
+        EMustard15ltrTin=(KGMustard15ltr_)/10+2.5;
+        EMustard15ltrTin=EMustard15ltrTin*0.91*15;
+        EMustard15ltrTin=EMustard15ltrTin+111+0.7+4.13+1+8+2;
+        EMustard15ltrTin=EMustard15ltrTin+EMustard15ltrTin*1.5/100;
+        EMustard15ltrTin=EMustard15ltrTin+EMustard15ltrTin*5/100;
+          
 
       // soya
 
+        Soya15ltr = (Soya15ltr_)/10;
+        Soya15ltr  = (Soya15ltr + 4) * 15;
+        Soya15ltr  = Soya15ltr  + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Soya15ltr  = Soya15ltr  +Soya15ltr * 1.5 / 100;
+        Soya15ltr  = Soya15ltr  + Soya15ltr  * 5 / 100;
 
+        //Soya 1 ltr pouch
+        Soya1ltrPouch =(Soya15ltr_)/10+4;
+        Soya1ltrPouch=Soya1ltrPouch*0.91;
+        Soya1ltrPouch=Soya1ltrPouch+1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        Soya1ltrPouch=Soya1ltrPouch+Soya1ltrPouch*1.5/100;
+        Soya1ltrPouch=Soya1ltrPouch+Soya1ltrPouch*5/100;
 
+        // soya 15 ltr tin
+        Soya15ltrTin =(Soya15ltr_)/10+4;
+        Soya15ltrTin =Soya15ltrTin*0.91*15;
+        Soya15ltrTin =Soya15ltrTin + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Soya15ltrTin = Soya15ltrTin +Soya15ltrTin *1.5/100;
+        Soya15ltrTin =Soya15ltrTin +Soya15ltrTin *5/100;
 
-
-      // KGMustard
-
-
-
-      // Mustard
-        KGMustard15ltrTin =
-            data['KGMustard15ltrTin'] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
-        Soya15ltrTin =
-            data['Soya15ltrTin'] + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
-        EMustard15ltrTin =
-            data['EMustard15ltrTin'] + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+//Upto here---------------------------------------------------------------------------------------------------------------------------------------------
 
         
-        KGMustard1ltrPouch =
-            data['KGMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
-        Soya1ltrPouch =
-            data['Soya1ltrPouch'] + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
-        EMustard1ltrPouch =
-            data['EMustard1ltrPouch'] + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
-
-
-        KGMustard15ltrTin += KGMustard15ltrTin * 1.5 / 100;
-        Soya15ltrTin += Soya15ltrTin * 1.5 / 100;
-        EMustard15ltrTin += EMustard15ltrTin * 1.5 / 100;
-
-        KGMustard1ltrPouch += KGMustard1ltrPouch * 1.5 / 100;
-        Soya1ltrPouch += Soya1ltrPouch * 1.5 / 100;
-        EMustard1ltrPouch += EMustard1ltrPouch * 1.5 / 100;
       });
     }).catchError((err) {
       print(err);
