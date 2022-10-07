@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": ((context) => AnimatedSplashScreen(
              nextScreen: HomePageWidget(),
-             splash : 'assets/logo.jpeg',
+             splash : 'assets/bn.png',
              splashIconSize : 300,
              duration: 500,
              )

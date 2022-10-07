@@ -51,10 +51,10 @@ class _ResultState extends State<Result> {
       Soya1ltrPouch = 0,
       EMustard1ltrPouch = 0;
   List<String> place = [
-    'Delhi',
-    'Haryana',
-    'Himachal Pradesh',
-    'Jammu And Kashmir',
+    'Uttar Pradesh',
+    'Madhya Pradesh',
+    'Orissa',
+    'Jharkhand',
     'Punjab',
     'Rajasthan',
     'Uttarakhand',
@@ -226,7 +226,7 @@ class _ResultState extends State<Result> {
                     })
                   },
                   title: Text(
-                    'Delhi',
+                    'Uttar Pradesh',
                   ),
                   tileColor: Color(0xFFF5F5F5),
                   dense: false,
@@ -240,7 +240,7 @@ class _ResultState extends State<Result> {
                     })
                   },
                   title: Text(
-                    'Haryana',
+                    'Madhya Pradesh',
                   ),
                   tileColor: Color(0xFFF5F5F5),
                   dense: false,
@@ -254,7 +254,7 @@ class _ResultState extends State<Result> {
                     })
                   },
                   title: Text(
-                    'Himachal Pradesh',
+                    'Orissa',
                   ),
                   tileColor: Color(0xFFF5F5F5),
                   dense: false,
@@ -268,105 +268,7 @@ class _ResultState extends State<Result> {
                     })
                   },
                   title: Text(
-                    'Jammu and Kashmir',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[4],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(4);
-                    })
-                  },
-                  title: Text(
-                    'Punjab',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[5],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(5);
-                    })
-                  },
-                  title: Text(
-                    'Rajasthan',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[6],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(6);
-                    })
-                  },
-                  title: Text(
-                    'Uttarakhand',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[7],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(7);
-                    })
-                  },
-                  title: Text(
-                    'Uttar Pradesh',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[8],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(8);
-                    })
-                  },
-                  title: Text(
-                    'Gujarat',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[9],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(9);
-                    })
-                  },
-                  title: Text(
-                    'Chhattisgarh',
-                  ),
-                  tileColor: Color(0xFFF5F5F5),
-                  dense: false,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                ),
-                SwitchListTile(
-                  value: chk[10],
-                  onChanged: (newValue) => {
-                    setState(() {
-                      setArr(10);
-                    })
-                  },
-                  title: Text(
-                    'Maharashtra',
+                    'Jharkhand',
                   ),
                   tileColor: Color(0xFFF5F5F5),
                   dense: false,
@@ -392,11 +294,22 @@ class _ResultState extends State<Result> {
                             ),
                           ),
                         ),
+                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                          width: 64,
+                          height: 64,
+                          child: Image(
+                              image: Image.asset("assets/bn.png").image),
+                        ),
                         SizedBox(
                           width: 64,
                           height: 64,
                           child: Image(
-                              image: Image.asset("assets/logo.jpeg").image),
+                              image: Image.asset("assets/sb.png").image),
+                        ),
+                          ],
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
@@ -406,12 +319,6 @@ class _ResultState extends State<Result> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "15 kg plain - ${(Soya15ltr).toStringAsFixed(2)}"),
                           alignment: Alignment.centerLeft,
                         ),
                         Container(
@@ -442,12 +349,6 @@ class _ResultState extends State<Result> {
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
-                              "15 kg plain - ${Palm15ltr.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
                               "1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
                           alignment: Alignment.centerLeft,
                         ),
@@ -470,12 +371,7 @@ class _ResultState extends State<Result> {
                           ),
                           alignment: Alignment.centerLeft,
                         ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "15 kg plain - ${EMustard15ltr.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
+                        
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
@@ -504,12 +400,6 @@ class _ResultState extends State<Result> {
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 5),
                           child: Text(
-                              "15 kg plain - ${KGMustard15ltr.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
                               "1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
                           alignment: Alignment.centerLeft,
                         ),
@@ -519,7 +409,32 @@ class _ResultState extends State<Result> {
                               "15 ltr tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
                           alignment: Alignment.centerLeft,
                         ),
-                      ]),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                          width: 64,
+                          height: 64,
+                          child: Image(
+                              image: Image.asset("assets/sf.png").image),
+                        ),
+                        SizedBox(
+                          width: 64,
+                          height: 64,
+                          child: Image(
+                              image: Image.asset("assets/hv.png").image),
+                        ),
+                        SizedBox(
+                          width: 64,
+                          height: 64,
+                          child: Image(
+                              image: Image.asset("assets/rg.png").image),
+                        ),
+                          ],
+                        ),
+                      ],
+                     ),
                     ),
                   ),
                 ),
@@ -570,7 +485,7 @@ class _ResultState extends State<Result> {
       context: context,
       builder: (context) => Scaffold(
         appBar: AppBar(
-          title: Text("screenshot"),
+          title: Text("From BN Daily Rates"),
           actions: [
             IconButton(
               icon: Icon(Icons.share),
