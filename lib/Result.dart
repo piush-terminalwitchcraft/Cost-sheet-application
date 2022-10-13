@@ -318,16 +318,16 @@ class _ResultState extends State<Result> {
                             ),
                             alignment: Alignment.centerLeft,
                           ),
-                          Container(
+                           Container(
                             margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
+                                "15 Kg Tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "15 Kg tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
+                                "1 Ltr Pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           SizedBox(
@@ -346,15 +346,15 @@ class _ResultState extends State<Result> {
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
+                                "15 Kg Tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "15 Kg tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
+                                "1 Ltr Pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
-                          ),
+                          ),             
                           SizedBox(
                             height: 10,
                           ),
@@ -371,13 +371,13 @@ class _ResultState extends State<Result> {
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
+                                "15 Kg Tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "15 Kg tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
+                                "1 Ltr Pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           SizedBox(
@@ -394,15 +394,15 @@ class _ResultState extends State<Result> {
                             alignment: Alignment.centerLeft,
                           ),
                           Container(
-                            margin: EdgeInsets.symmetric(vertical: 5),
+                            margin: EdgeInsets.symmetric(vertical: 10),
                             child: Text(
-                                "1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
+                                "15 Kg Tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           Container(
-                            margin: EdgeInsets.symmetric(vertical: 10),
+                            margin: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                                "15 Kg tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
+                                "1 Ltr Pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
                             alignment: Alignment.centerLeft,
                           ),
                           Row(
