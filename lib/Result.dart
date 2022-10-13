@@ -97,103 +97,101 @@ class _ResultState extends State<Result> {
         rates[9] = data['Chhattisgarh'];
         rates[10] = data['Maharashtra'];
 
-        
-        Palm15ltr_ = data['Palm15ltr'];  // palm input 
+        Palm15ltr_ = data['Palm15ltr']; // palm input
         KGMustard15ltr_ = data['KGMustard15ltr']; // Kacchi ghani input
-        Soya15ltr_ = data['Soya15ltr'];  // soya input
-        EMustard15ltr_ = data['EMustard15ltr'];  // mustard input
+        Soya15ltr_ = data['Soya15ltr']; // soya input
+        EMustard15ltr_ = data['EMustard15ltr']; // mustard input
 
         //Editted from here--------------------------------------------------------------------------------------
         // palm 15 ltr calculations
-        Palm15ltr = (Palm15ltr_)/10;
+        Palm15ltr = (Palm15ltr_) / 10;
         Palm15ltr = (Palm15ltr + 4) * 15;
         Palm15ltr = Palm15ltr + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
         Palm15ltr = Palm15ltr + Palm15ltr * 1.5 / 100;
         Palm15ltr = Palm15ltr + Palm15ltr * 5 / 100;
 
         // palm 1 ltr pouch
-        Palm1ltrPouch =(Palm15ltr_)/10+4;
-        Palm1ltrPouch=Palm1ltrPouch*0.9;
-        Palm1ltrPouch= Palm1ltrPouch+1.90 + 1.76 + 0.08 + 0.25 + 0.17;
-        Palm1ltrPouch= Palm1ltrPouch+ Palm1ltrPouch*1.5/100;
-        Palm1ltrPouch= Palm1ltrPouch+ Palm1ltrPouch*5/100;
+        Palm1ltrPouch = (Palm15ltr_) / 10 + 4;
+        Palm1ltrPouch = Palm1ltrPouch * 0.9;
+        Palm1ltrPouch = Palm1ltrPouch + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        Palm1ltrPouch = Palm1ltrPouch + Palm1ltrPouch * 1.5 / 100;
+        Palm1ltrPouch = Palm1ltrPouch + Palm1ltrPouch * 5 / 100;
 
         // palm 15 ltr tin
-        Palm15ltrTin =  (Palm15ltr_)/10+4;
-        Palm15ltrTin= Palm15ltrTin*0.9*15;
-        Palm15ltrTin= Palm15ltrTin+116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
-        Palm15ltrTin= Palm15ltrTin+ Palm15ltrTin*1.5/100;
-        Palm15ltrTin= Palm15ltrTin+ Palm15ltrTin*5/100;
+        Palm15ltrTin = (Palm15ltr_) / 10 + 4;
+        Palm15ltrTin = Palm15ltrTin * 0.9 * 15;
+        Palm15ltrTin = Palm15ltrTin + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Palm15ltrTin = Palm15ltrTin + Palm15ltrTin * 1.5 / 100;
+        Palm15ltrTin = Palm15ltrTin + Palm15ltrTin * 5 / 100;
 
         //KGMustard
-        KGMustard15ltr = (KGMustard15ltr_) /10;
-        KGMustard15ltr  = (KGMustard15ltr + 2.5) * 15;
-        KGMustard15ltr  = KGMustard15ltr  + 111 + 0.7 + 4.13 + 1 + 8 + 2;
-        KGMustard15ltr  =KGMustard15ltr +KGMustard15ltr  * 1.5 / 100;
-        KGMustard15ltr  = KGMustard15ltr +KGMustard15ltr  * 5 / 100;
-        
-        
+        KGMustard15ltr = (KGMustard15ltr_) / 10;
+        KGMustard15ltr = (KGMustard15ltr + 2.5) * 15;
+        KGMustard15ltr = KGMustard15ltr + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        KGMustard15ltr = KGMustard15ltr + KGMustard15ltr * 1.5 / 100;
+        KGMustard15ltr = KGMustard15ltr + KGMustard15ltr * 5 / 100;
+
         //KG Mustard 1 ltr pouch
-        KGMustard1ltrPouch=(KGMustard15ltr_)/10+2.5;        
-        KGMustard1ltrPouch=KGMustard1ltrPouch*0.91;
-        KGMustard1ltrPouch=KGMustard1ltrPouch+1.95+1.76+0.08+0.25+0.17;
-        KGMustard1ltrPouch=KGMustard1ltrPouch+KGMustard1ltrPouch*1.5/100;
-        KGMustard1ltrPouch=KGMustard1ltrPouch+KGMustard1ltrPouch*5/100;
-        
+        KGMustard1ltrPouch = (KGMustard15ltr_) / 10 + 2.5;
+        KGMustard1ltrPouch = KGMustard1ltrPouch * 0.91;
+        KGMustard1ltrPouch =
+            KGMustard1ltrPouch + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
+        KGMustard1ltrPouch =
+            KGMustard1ltrPouch + KGMustard1ltrPouch * 1.5 / 100;
+        KGMustard1ltrPouch = KGMustard1ltrPouch + KGMustard1ltrPouch * 5 / 100;
+
         //KGMustard 15 ltr tin
-        KGMustard15ltrTin=(KGMustard15ltr_)/10+2.5;
-        KGMustard15ltrTin=KGMustard15ltrTin*0.91*15;
-        KGMustard15ltrTin=KGMustard15ltrTin+111+0.7+4.13+1+8+2;
-        KGMustard15ltrTin=KGMustard15ltrTin+KGMustard15ltrTin*1.5/100;
-        KGMustard15ltrTin=KGMustard15ltrTin+KGMustard15ltrTin*5/100;
+        KGMustard15ltrTin = (KGMustard15ltr_) / 10 + 2.5;
+        KGMustard15ltrTin = KGMustard15ltrTin * 0.91 * 15;
+        KGMustard15ltrTin = KGMustard15ltrTin + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        KGMustard15ltrTin = KGMustard15ltrTin + KGMustard15ltrTin * 1.5 / 100;
+        KGMustard15ltrTin = KGMustard15ltrTin + KGMustard15ltrTin * 5 / 100;
 
-        //EMustard  
-        EMustard15ltr = (EMustard15ltr_) /10;
-        EMustard15ltr  = (EMustard15ltr + 2.5) * 15;
-        EMustard15ltr  = EMustard15ltr  + 111 + 0.7 + 4.13 + 1 + 8 + 2;
-        EMustard15ltr  =EMustard15ltr +EMustard15ltr  * 1.5 / 100;
-        EMustard15ltr  = EMustard15ltr +EMustard15ltr  * 5 / 100;
-        
+        //EMustard
+        EMustard15ltr = (EMustard15ltr_) / 10;
+        EMustard15ltr = (EMustard15ltr + 2.5) * 15;
+        EMustard15ltr = EMustard15ltr + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        EMustard15ltr = EMustard15ltr + EMustard15ltr * 1.5 / 100;
+        EMustard15ltr = EMustard15ltr + EMustard15ltr * 5 / 100;
+
         //E Mustard 1 ltr pouch
-        EMustard1ltrPouch=(EMustard15ltr_)/10+2.5;        
-        EMustard1ltrPouch=EMustard1ltrPouch*0.91;
-        EMustard1ltrPouch=EMustard1ltrPouch+1.95+1.76+0.08+0.25+0.17;
-        EMustard1ltrPouch=EMustard1ltrPouch+EMustard1ltrPouch*1.5/100;
-        EMustard1ltrPouch=EMustard1ltrPouch+EMustard1ltrPouch*5/100;
-        
+        EMustard1ltrPouch = (EMustard15ltr_) / 10 + 2.5;
+        EMustard1ltrPouch = EMustard1ltrPouch * 0.91;
+        EMustard1ltrPouch =
+            EMustard1ltrPouch + 1.95 + 1.76 + 0.08 + 0.25 + 0.17;
+        EMustard1ltrPouch = EMustard1ltrPouch + EMustard1ltrPouch * 1.5 / 100;
+        EMustard1ltrPouch = EMustard1ltrPouch + EMustard1ltrPouch * 5 / 100;
+
         //EMustard 15 ltr tin
-        EMustard15ltrTin=(KGMustard15ltr_)/10+2.5;
-        EMustard15ltrTin=EMustard15ltrTin*0.91*15;
-        EMustard15ltrTin=EMustard15ltrTin+111+0.7+4.13+1+8+2;
-        EMustard15ltrTin=EMustard15ltrTin+EMustard15ltrTin*1.5/100;
-        EMustard15ltrTin=EMustard15ltrTin+EMustard15ltrTin*5/100;
-          
+        EMustard15ltrTin = (KGMustard15ltr_) / 10 + 2.5;
+        EMustard15ltrTin = EMustard15ltrTin * 0.91 * 15;
+        EMustard15ltrTin = EMustard15ltrTin + 111 + 0.7 + 4.13 + 1 + 8 + 2;
+        EMustard15ltrTin = EMustard15ltrTin + EMustard15ltrTin * 1.5 / 100;
+        EMustard15ltrTin = EMustard15ltrTin + EMustard15ltrTin * 5 / 100;
 
-      // soya
+        // soya
 
-        Soya15ltr = (Soya15ltr_)/10;
-        Soya15ltr  = (Soya15ltr + 4) * 15;
-        Soya15ltr  = Soya15ltr  + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
-        Soya15ltr  = Soya15ltr  +Soya15ltr * 1.5 / 100;
-        Soya15ltr  = Soya15ltr  + Soya15ltr  * 5 / 100;
+        Soya15ltr = (Soya15ltr_) / 10;
+        Soya15ltr = (Soya15ltr + 4) * 15;
+        Soya15ltr = Soya15ltr + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Soya15ltr = Soya15ltr + Soya15ltr * 1.5 / 100;
+        Soya15ltr = Soya15ltr + Soya15ltr * 5 / 100;
 
         //Soya 1 ltr pouch
-        Soya1ltrPouch =(Soya15ltr_)/10+4;
-        Soya1ltrPouch=Soya1ltrPouch*0.91;
-        Soya1ltrPouch=Soya1ltrPouch+1.90 + 1.76 + 0.08 + 0.25 + 0.17;
-        Soya1ltrPouch=Soya1ltrPouch+Soya1ltrPouch*1.5/100;
-        Soya1ltrPouch=Soya1ltrPouch+Soya1ltrPouch*5/100;
+        Soya1ltrPouch = (Soya15ltr_) / 10 + 4;
+        Soya1ltrPouch = Soya1ltrPouch * 0.91;
+        Soya1ltrPouch = Soya1ltrPouch + 1.90 + 1.76 + 0.08 + 0.25 + 0.17;
+        Soya1ltrPouch = Soya1ltrPouch + Soya1ltrPouch * 1.5 / 100;
+        Soya1ltrPouch = Soya1ltrPouch + Soya1ltrPouch * 5 / 100;
 
         // soya 15 ltr tin
-        Soya15ltrTin =(Soya15ltr_)/10+4;
-        Soya15ltrTin =Soya15ltrTin*0.91*15;
-        Soya15ltrTin =Soya15ltrTin + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
-        Soya15ltrTin = Soya15ltrTin +Soya15ltrTin *1.5/100;
-        Soya15ltrTin =Soya15ltrTin +Soya15ltrTin *5/100;
+        Soya15ltrTin = (Soya15ltr_) / 10 + 4;
+        Soya15ltrTin = Soya15ltrTin * 0.91 * 15;
+        Soya15ltrTin = Soya15ltrTin + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
+        Soya15ltrTin = Soya15ltrTin + Soya15ltrTin * 1.5 / 100;
+        Soya15ltrTin = Soya15ltrTin + Soya15ltrTin * 5 / 100;
 
 //Upto here---------------------------------------------------------------------------------------------------------------------------------------------
-
-        
       });
     }).catchError((err) {
       print(err);
@@ -280,161 +278,158 @@ class _ResultState extends State<Result> {
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
-                      child: Column(children: [
-                        SizedBox(height: 10),
-                        SizedBox(height: 10),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
-                            "Rates on ${DateFormat('dd/MM/yyyy').format(DateTime.now())} For ${place[getidx()]}",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w800,
-                              fontSize: 16,
-                              decoration: TextDecoration.underline,
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          SizedBox(height: 10),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: 64,
+                                  height: 64,
+                                  child: Image(
+                                      image:
+                                          Image.asset("assets/sb.png").image),
+                                ),
+                                SizedBox(width: 10),
+                                Expanded(
+                                  child: Text(
+                                    "Rates on ${DateFormat('dd/MM/yyyy').format(DateTime.now())} For ${place[getidx()]}",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 16,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                          width: 64,
-                          height: 64,
-                          child: Image(
-                              image: Image.asset("assets/bn.png").image),
-                        ),
-                        SizedBox(
-                          width: 64,
-                          height: 64,
-                          child: Image(
-                              image: Image.asset("assets/sb.png").image),
-                        ),
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                            "Soya Oil",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                              "Soya Oil",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            alignment: Alignment.centerLeft,
                           ),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "15 ltr tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                            "Palm Oil",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "1 ltr pouch - ${Soya1ltrPouch.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "15 Kg tin - ${Soya15ltrTin.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                              "Palm Oil",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            alignment: Alignment.centerLeft,
                           ),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "15 ltr tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                            "Mustard Oil",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "1 ltr pouch - ${Palm1ltrPouch.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "15 Kg tin - ${Palm15ltrTin.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                              "Mustard Oil",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            alignment: Alignment.centerLeft,
                           ),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "15 ltr tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                            "Kacchhi Ghani Mustard Oil",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "1 ltr pouch - ${EMustard1ltrPouch.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "15 Kg tin - ${EMustard15ltrTin.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                              "Kacchhi Ghani Mustard Oil",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            alignment: Alignment.centerLeft,
                           ),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                              "1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
-                              "15 ltr tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
-                          alignment: Alignment.centerLeft,
-                        ),
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                          width: 64,
-                          height: 64,
-                          child: Image(
-                              image: Image.asset("assets/sf.png").image),
-                        ),
-                        SizedBox(
-                          width: 64,
-                          height: 64,
-                          child: Image(
-                              image: Image.asset("assets/hv.png").image),
-                        ),
-                        SizedBox(
-                          width: 64,
-                          height: 64,
-                          child: Image(
-                              image: Image.asset("assets/rg.png").image),
-                        ),
-                          ],
-                        ),
-                      ],
-                     ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                                "1 ltr pouch - ${KGMustard1ltrPouch.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            child: Text(
+                                "15 Kg tin - ${KGMustard15ltrTin.toStringAsFixed(2)}"),
+                            alignment: Alignment.centerLeft,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: 64,
+                                height: 64,
+                                child: Image(
+                                    image: Image.asset("assets/rg.png").image),
+                              ),
+                              SizedBox(
+                                width: 104,
+                                height: 104,
+                                child: Image(
+                                    image: Image.asset("assets/Logo.png").image),
+                              ),
+                              SizedBox(
+                                width: 30,
+                                height: 30,
+                                child: Image(
+                                    image: Image.asset("assets/bn.png").image),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
