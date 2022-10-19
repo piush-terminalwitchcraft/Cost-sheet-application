@@ -33,15 +33,14 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": ((context) => AnimatedSplashScreen(
-             nextScreen: HomePageWidget(),
-             splash : 'assets/sb.png',
-             splashIconSize : 300,
-             duration: 500,
-             )
-          ),
+              nextScreen: HomePageWidget(),
+              splash: 'assets/sb.png',
+              splashIconSize: 300,
+              duration: 500,
+            )),
         "/firstpage": ((context) => SecondScreenWidget()),
         "/secondpage": ((context) => ThirdScreenWidget()),
-        "/secondpage2":((context)=> SecondScreenWidget2()),
+        "/secondpage2": ((context) => SecondScreenWidget2()),
         "/respage": ((context) => Result()),
       },
     );
@@ -92,7 +91,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
             ),
-             
             SizedBox(
               height: 20,
             ),
@@ -109,30 +107,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                   SizedBox(
-                        width: 130,
-                        height: 60,
-                        child: TextFormField(
-                          controller: textController3,
-                          textAlign: TextAlign.center,
-                          textAlignVertical: TextAlignVertical.center,
-                          autofocus: true,
-                          obscureText: false,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Color(0xFFFFD9B3),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
+                    width: 130,
+                    height: 60,
+                    child: TextFormField(
+                      controller: textController3,
+                      textAlign: TextAlign.center,
+                      textAlignVertical: TextAlignVertical.center,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFFFD9B3),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
                           ),
-                          // style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),
+                      // style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ),
                 ],
               ),
             ),
-        SizedBox(
+            SizedBox(
               height: 20,
             ),
             Padding(
@@ -148,30 +146,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                   SizedBox(
-                        width: 130,
-                        height: 60,
-                        child: TextFormField(
-                          controller: textController1,
-                          textAlign: TextAlign.center,
-                          textAlignVertical: TextAlignVertical.center,
-                          autofocus: true,
-                          obscureText: false,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Color(0xFFFFD9B3),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
+                    width: 130,
+                    height: 60,
+                    child: TextFormField(
+                      controller: textController1,
+                      textAlign: TextAlign.center,
+                      textAlignVertical: TextAlignVertical.center,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFFFD9B3),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
                           ),
-                          // style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),
+                      // style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ),
                 ],
               ),
             ),
-        SizedBox(
+            SizedBox(
               height: 20,
             ),
             Padding(
@@ -187,30 +185,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                   SizedBox(
-                        width: 130,
-                        height: 60,
-                        child: TextFormField(
-                          controller: textController4,
-                          textAlign: TextAlign.center,
-                          textAlignVertical: TextAlignVertical.center,
-                          autofocus: true,
-                          obscureText: false,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Color(0xFFFFD9B3),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
+                    width: 130,
+                    height: 60,
+                    child: TextFormField(
+                      controller: textController4,
+                      textAlign: TextAlign.center,
+                      textAlignVertical: TextAlignVertical.center,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFFFD9B3),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
                           ),
-                          // style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),
+                      // style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ),
                 ],
               ),
             ),
-        
             SizedBox(
               height: 20,
             ),
@@ -227,30 +224,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                   SizedBox(
-                        width: 130,
-                        height: 60,
-                        child: TextFormField(
-                          controller: textController2,
-                          textAlign: TextAlign.center,
-                          textAlignVertical: TextAlignVertical.center,
-                          autofocus: true,
-                          obscureText: false,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Color(0xFFFFD9B3),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
+                    width: 130,
+                    height: 60,
+                    child: TextFormField(
+                      controller: textController2,
+                      textAlign: TextAlign.center,
+                      textAlignVertical: TextAlignVertical.center,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFFFD9B3),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
                           ),
-                          // style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),
+                      // style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ),
                 ],
               ),
             ),
-        
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(250, 50, 20, 0),
               child: ElevatedButton.icon(
@@ -260,6 +256,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
                 onPressed: () async {
+                  textController1!.text.isEmpty
+                      ? print("abe pagle")
+                      : print("dekh raha hau");
                   // print(textController1?.text); // palm
                   // print(textController2?.text); // kg mustard
                   // print(textController3?.text); // soya
@@ -267,24 +266,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   await users
                       .doc('VdD1KmsYSvjhVDyx0RYw')
                       .update({
-                        'Palm15ltr': double.parse((textController1 == null
-                                ? '0'
-                                : textController1!.text)),
-                        'KGMustard15ltr': double.parse((textController2 == null
-                                ? '0'
-                                : textController2!.text)),
-                        'Soya15ltr': double.parse((textController3 == null
-                                ? '0'
-                                : textController3!.text)),
-                        'EMustard15ltr': double.parse((textController4 == null
-                                ? '0'
-                                : textController4!.text)),
+                        'Palm15ltr': double.parse((textController1!.text.isEmpty
+                            ? '0'
+                            : textController1!.text)),
+                        'KGMustard15ltr': double.parse((textController2!.text.isEmpty
+                            ? '0'
+                            : textController2!.text)),
+                        'Soya15ltr': double.parse((textController3!.text.isEmpty
+                            ? '0'
+                            : textController3!.text)),
+                        'EMustard15ltr': double.parse((textController4!.text.isEmpty
+                            ? '0'
+                            : textController4!.text)),
                       })
                       .then((value) => {print("Data updated")})
                       .catchError((error) => {
                             print(error),
                           });
-        
+
                   Navigator.of(context).pushNamed('/respage');
                 },
                 label: Container(
