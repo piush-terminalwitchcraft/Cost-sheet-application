@@ -122,8 +122,8 @@ class _ResultState extends State<Result> {
           Palm1ltrPouch = Palm1ltrPouch + Palm1ltrPouch * 5 / 100;
 
           // palm 15 ltr tin
-          Palm15ltrTin = (Palm15ltr_) / 10 + 4;
-          Palm15ltrTin = Palm15ltrTin * 0.9 * 15;
+          Palm15ltrTin = (Palm15ltr_) / 10;
+          Palm15ltrTin = (Palm15ltrTin + 4)*15;
           Palm15ltrTin = Palm15ltrTin + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
           Palm15ltrTin = Palm15ltrTin + Palm15ltrTin * 1.5 / 100;
           Palm15ltrTin = Palm15ltrTin + Palm15ltrTin * 5 / 100;
@@ -152,7 +152,7 @@ class _ResultState extends State<Result> {
 
           //KGMustard 15 ltr tin
           KGMustard15ltrTin = (KGMustard15ltr_) / 10 + 2.5;
-          KGMustard15ltrTin = KGMustard15ltrTin * 0.91 * 15;
+          KGMustard15ltrTin = (KGMustard15ltrTin + 2.5)* 15;
           KGMustard15ltrTin = KGMustard15ltrTin + 111 + 0.7 + 4.13 + 1 + 8 + 2;
           KGMustard15ltrTin = KGMustard15ltrTin + KGMustard15ltrTin * 1.5 / 100;
           KGMustard15ltrTin = KGMustard15ltrTin + KGMustard15ltrTin * 5 / 100;
@@ -178,8 +178,8 @@ class _ResultState extends State<Result> {
           EMustard1ltrPouch = EMustard1ltrPouch + EMustard1ltrPouch * 5 / 100;
 
           //EMustard 15 ltr tin
-          EMustard15ltrTin = (KGMustard15ltr_) / 10 + 2.5;
-          EMustard15ltrTin = EMustard15ltrTin * 0.91 * 15;
+          EMustard15ltrTin = (KGMustard15ltr_) / 10;
+          EMustard15ltrTin = (EMustard15ltrTin + 2.5) * 15;
           EMustard15ltrTin = EMustard15ltrTin + 111 + 0.7 + 4.13 + 1 + 8 + 2;
           EMustard15ltrTin = EMustard15ltrTin + EMustard15ltrTin * 1.5 / 100;
           EMustard15ltrTin = EMustard15ltrTin + EMustard15ltrTin * 5 / 100;
@@ -204,8 +204,8 @@ class _ResultState extends State<Result> {
           Soya1ltrPouch = Soya1ltrPouch + Soya1ltrPouch * 5 / 100;
 
           // soya 15 ltr tin
-          Soya15ltrTin = (Soya15ltr_) / 10 + 4;
-          Soya15ltrTin = Soya15ltrTin * 0.91 * 15;
+          Soya15ltrTin = (Soya15ltr_) / 10;
+          Soya15ltrTin = (Soya15ltrTin + 4) * 15;
           Soya15ltrTin = Soya15ltrTin + 116 + 1.65 + 0.7 + 4.72 + 1 + 8 + 2;
           Soya15ltrTin = Soya15ltrTin + Soya15ltrTin * 1.5 / 100;
           Soya15ltrTin = Soya15ltrTin + Soya15ltrTin * 5 / 100;
