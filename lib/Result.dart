@@ -151,7 +151,7 @@ class _ResultState extends State<Result> {
               KGMustard1ltrPouch + KGMustard1ltrPouch * 5 / 100;
 
           //KGMustard 15 ltr tin
-          KGMustard15ltrTin = (KGMustard15ltr_) / 10 + 2.5;
+          KGMustard15ltrTin = (KGMustard15ltr_) / 10 ;
           KGMustard15ltrTin = (KGMustard15ltrTin + 2.5)* 15;
           KGMustard15ltrTin = KGMustard15ltrTin + 111 + 0.7 + 4.13 + 1 + 8 + 2;
           KGMustard15ltrTin = KGMustard15ltrTin + KGMustard15ltrTin * 1.5 / 100;
@@ -162,6 +162,7 @@ class _ResultState extends State<Result> {
         }
 
         //EMustard
+        print(EMustard15ltr);;
         EMustard15ltr = (EMustard15ltr_) / 10;
         EMustard15ltr = (EMustard15ltr + 2.5) * 15;
         EMustard15ltr = EMustard15ltr + 111 + 0.7 + 4.13 + 1 + 8 + 2;
@@ -178,7 +179,7 @@ class _ResultState extends State<Result> {
           EMustard1ltrPouch = EMustard1ltrPouch + EMustard1ltrPouch * 5 / 100;
 
           //EMustard 15 ltr tin
-          EMustard15ltrTin = (KGMustard15ltr_) / 10;
+          EMustard15ltrTin = (EMustard15ltr_) / 10;
           EMustard15ltrTin = (EMustard15ltrTin + 2.5) * 15;
           EMustard15ltrTin = EMustard15ltrTin + 111 + 0.7 + 4.13 + 1 + 8 + 2;
           EMustard15ltrTin = EMustard15ltrTin + EMustard15ltrTin * 1.5 / 100;
